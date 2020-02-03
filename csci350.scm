@@ -23,6 +23,7 @@
    ((null? L) 0)
    ((list? L) (cond
                ((number? (car L)) (+ (sum-up-numbers-general (cdr L)) (car L)))
+               ((list? (car L)) (+ (sum-up-numbers-general (cdr L)) (sum-up-numbers-general (car L))))
                (else (+ (sum-up-numbers-general (cdr L)) 0))
               )
    )
