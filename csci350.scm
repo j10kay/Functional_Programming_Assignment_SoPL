@@ -17,3 +17,15 @@
    (else 0)
    )
 )
+
+(define (sum-up-numbers-general L)
+  (cond
+   ((null? L) 0)
+   ((list? L) (cond
+               ((number? (car L)) (+ (sum-up-numbers-general (cdr L)) (car L)))
+               (else (+ (sum-up-numbers-general (cdr L)) 0))
+              )
+   )
+   (else 0)
+   )
+)
