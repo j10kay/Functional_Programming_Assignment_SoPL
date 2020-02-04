@@ -31,15 +31,8 @@
    )
 )
 
-(define (min-simple L)
+(define (min-simple L currentMin) ;currentMin default value is #f
   (cond 
-    ((null? (cdr L)) (cond
-        ((number? (car L)) (car L))
-        (else 10000000000000000000)
-        ))
-       ((number? (car L)) (cond
-        ((< (car L) (min-simple (cdr L))) (car L))
-        (else (min-simple (cdr L)))
-        ))
-    (else (min-simple (cdr L))))
-)
+   ((null? L) currentMin)
+    ((number? (car L)) (cond
+        ((not(number? currentMin)) (min-simple (cdr L) (car L)))
