@@ -30,3 +30,10 @@
    (else 0)
    )
 )
+
+(define (min-simple L)
+  (cond 
+    ((null? (cdr L)) (cond
+        ((number? (car L)) (car L))
+        (else 10000000000000000000)
+        ))
