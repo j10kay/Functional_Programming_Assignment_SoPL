@@ -37,3 +37,9 @@
         ((number? (car L)) (car L))
         (else 10000000000000000000)
         ))
+       ((number? (car L)) (cond
+        ((< (car L) (min-simple (cdr L))) (car L))
+        (else (min-simple (cdr L)))
+        ))
+    (else (min-simple (cdr L))))
+)
