@@ -36,3 +36,8 @@
    ((null? L) currentMin)
     ((number? (car L)) (cond
         ((not(number? currentMin)) (min-simple (cdr L) (car L)))
+        ((< (car L) currentMin) (min-simple (cdr L) (car L)))
+        (else (min-simple (cdr L) currentMin))
+        ))
+    (else (min-simple (cdr L) currentMin)))
+)
