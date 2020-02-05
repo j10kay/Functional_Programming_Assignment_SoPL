@@ -66,3 +66,6 @@
        )
 )
 
+(define (min-above-min L1 L2)
+    (min-above-num L1 #f (min-simple L2 #f))
+)
