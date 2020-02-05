@@ -41,3 +41,9 @@
         ))
     (else (min-simple (cdr L) currentMin)))
 )
+
+(define (min-above-num L currentMin otherMin) ;currentMin default value is #f
+    (cond
+        ((null? L) currentMin) 
+        ((not(number? (car L))) (min-above-num (cdr L) currentMin otherMin))
+        (else
