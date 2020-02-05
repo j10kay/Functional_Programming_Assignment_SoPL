@@ -54,4 +54,15 @@
                         (else (min-above-num (cdr L) (min (car L) currentMin) otherMin))
                     )  
                 )
+                ((<= (car L) otherMin) (min-above-num (cdr L) currentMin otherMin))
+                      (else 
+                          (cond 
+                              ((not (number? currentMin)) (min-above-num (cdr L) (car L) otherMin))
+                              (else (min-above-num (cdr L) (min (car L) currentMin) otherMin))
+                          )
+                      )
+           )
+          )
+       )
+)
 
